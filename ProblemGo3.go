@@ -30,7 +30,7 @@ func ElizaResponse(input string) string {
 }
 
 func main() {
-
+	//Comments
 	//Prints random input and output from eliza that matched string
 	rand.Seed(time.Now().Unix())
 	fmt.Println("People say I look like both my mother and father.")
