@@ -81,7 +81,6 @@ func Reflect(userInput string) string {
 	// Put the tokens back together.
 	return strings.Join(words, ``)
 } //End of Reflect function
-
 func main() {
 
 	//Prints random input and output from eliza that matched string
