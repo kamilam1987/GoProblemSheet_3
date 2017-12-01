@@ -9,7 +9,7 @@ https://help.github.com/articles/cloning-a-repository<br />
 https://github.com/processing/processing/wiki/Build-Instructions
 ### Instruction 
 - Step 1: In command line or terminal type: git clone https://github.com/kamilam1987/GoProblemSheet_3.git
-- Step 2: Navigate to : cdGoProblemSheet_3
+- Step 2: Navigate to : cd GoProblemSheet_3
 - Step 3: go build .\ProblemGo3.go
 - Step 4: .\ProblemGo3.exe or go run .\ProblemGo3.go
 
