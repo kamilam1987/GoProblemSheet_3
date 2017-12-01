@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math/rand"
 	"regexp"
+	"strings"
 	"time"
 )
 
@@ -41,6 +42,45 @@ func ElizaResponse(input string) string {
 	//Return random string from answers array
 	return answers[rand.Intn(len(answers))]
 }
+func Reflect(userInput string) string {
+	// Split the input on word boundaries.
+	boundaries := regexp.MustCompile(`\b`)
+	words := boundaries.Split(userInput, -1)
+
+	// List the reflections.
+	reflections := [][]string{
+		{`I`, `you`},
+		{`i`, `you`},
+		{`I`, `You`},
+		{`am`, `are`},
+		{`was`, `were`},
+		{`i'd`, `you would`},
+		{`i've`, `you have`},
+		{`i'll`, `you will`},
+		{`are`, `am`},
+		{`you've`, `I have`},
+		{`you'll`, `I will`},
+		{`yours`, `mine`},
+		{`me`, `you`},
+		{`you`, `me`},
+		{`my`, `your`},
+		{`your`, `my`},
+	}
+
+	// Loop through each token, reflecting it if there's a match.
+	//Code adapted from : https://gist.github.com/ianmcloughlin/c4c2b8dc586d06943f54b75d9e2250fe
+	for i, word := range words {
+		for _, reflection := range reflections {
+			if matched, _ := regexp.MatchString(reflection[0], word); matched {
+				words[i] = reflection[1]
+				break
+			}
+		}
+	}
+
+	// Put the tokens back together.
+	return strings.Join(words, ``)
+} //End of Reflect function
 
 func main() {
 
